@@ -16,6 +16,7 @@
 
 <!-- 年龄门禁 -->
 <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-label="年龄确认">
+  <div class="age-gate-bg" aria-hidden="true"></div>
   <div class="age-gate-card">
     <div class="age-gate-seal">顺</div>
     <h2>欢迎光临</h2>
@@ -34,7 +35,7 @@
   <div class="nav-inner">
     <a class="nav-logo" href="#top">
       <span class="nav-logo-seal">顺</span>
-      <span class="nav-logo-text">事事顺<em>SHISHISHUN</em></span>
+      <span class="nav-logo-text">事事顺<em>SHISHISHUN BAIJIU</em></span>
     </a>
     <nav class="nav-menu" id="navMenu">
       <a href="#story">品牌故事</a>
@@ -51,49 +52,68 @@
   </div>
 </header>
 
-<!-- 首屏 -->
+<!-- 首屏 · 电影级主视觉 -->
 <section class="hero" id="top">
-  <div class="hero-clouds" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <img src="assets/images/gen/hero-cinematic.jpg" alt="" class="hero-bg-img">
+    <div class="hero-bg-shade"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-text">
       <p class="hero-eyebrow reveal">安徽古井贡酒股份有限公司 · 出品</p>
-      <h1 class="hero-title reveal">
-        <span class="hero-line1">事事顺一开</span>
-        <span class="hero-line2">好运自然来</span>
+      <h1 class="hero-title">
+        <span class="hero-line reveal">事事顺一开</span>
+        <span class="hero-line hero-line-gold reveal" data-delay="150">好运自然来</span>
       </h1>
-      <p class="hero-desc reveal">柿子与如意，绘就"事事如意"；喜鹊登枝，报来"家顺、国顺、事事顺"。<br>中国吉祥文化白酒，献给每一位期盼顺遂的人。</p>
-      <div class="hero-btns reveal">
+      <p class="hero-desc reveal" data-delay="300">柿子与如意，绘就「事事如意」；喜鹊登枝，报来「家顺、国顺、事事顺」。<br>中国吉祥文化白酒，献给每一位期盼顺遂的人。</p>
+      <div class="hero-btns reveal" data-delay="450">
         <a href="#products" class="btn btn-gold">品鉴产品</a>
         <a href="#story" class="btn btn-outline">品牌故事</a>
       </div>
     </div>
-    <div class="hero-visual reveal">
-      <div class="hero-bottle-glow" aria-hidden="true"></div>
-      <img src="assets/images/product-zhongguohong.jpg" alt="事事顺·中国红 42度500ml 浓香型白酒" class="hero-product">
-    </div>
   </div>
   <div class="hero-vertical" aria-hidden="true">家顺 · 国顺 · 事事顺</div>
-  <a class="hero-scroll" href="#heritage" aria-label="向下滚动"><span></span></a>
+  <a class="hero-scroll" href="#intro" aria-label="向下滚动"><span></span></a>
 </section>
 
-<!-- 品牌背书数据条 -->
-<section class="heritage" id="heritage">
+<!-- 流动标语 -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>事事顺一开 好运自然来</span><i>❖</i>
+    <span>家顺 · 国顺 · 事事顺</span><i>❖</i>
+    <span>吾家有喜 就喝事事顺</span><i>❖</i>
+    <span>学业顺 · 事业顺 · 家业顺</span><i>❖</i>
+    <span>事事顺一开 好运自然来</span><i>❖</i>
+    <span>家顺 · 国顺 · 事事顺</span><i>❖</i>
+    <span>吾家有喜 就喝事事顺</span><i>❖</i>
+    <span>学业顺 · 事业顺 · 家业顺</span><i>❖</i>
+  </div>
+</div>
+
+<!-- 品牌引言 -->
+<section class="intro" id="intro">
   <div class="container">
-    <div class="heritage-grid">
-      <div class="heritage-item reveal">
-        <strong>1800<span>年</span></strong>
+    <p class="intro-eyebrow reveal">古井贡酒 · 年份原浆之源</p>
+    <h2 class="intro-title">
+      <span class="intro-line reveal">一杯贡酒，<em>千年</em>顺意。</span>
+      <span class="intro-line reveal" data-delay="150">从曹操进献的九酝春酒，</span>
+      <span class="intro-line reveal" data-delay="300">到今日万家灯火的<em>事事顺</em>。</span>
+    </h2>
+    <div class="intro-stats">
+      <div class="stat reveal">
+        <strong class="stat-num" data-count="1800">0</strong><span class="stat-unit">年</span>
         <p>九酝春酒进献汉献帝<br>贡酒之源</p>
       </div>
-      <div class="heritage-item reveal">
-        <strong>吉尼斯</strong>
+      <div class="stat reveal" data-delay="120">
+        <strong class="stat-text">吉尼斯</strong>
         <p>《九酝酒法》世界现存最古老<br>蒸馏酒酿造方法</p>
       </div>
-      <div class="heritage-item reveal">
-        <strong>国家非遗</strong>
+      <div class="stat reveal" data-delay="240">
+        <strong class="stat-text">国家非遗</strong>
         <p>古井贡酒酿造技艺<br>国家级非物质文化遗产</p>
       </div>
-      <div class="heritage-item reveal">
-        <strong>128<span>家</span></strong>
+      <div class="stat reveal" data-delay="360">
+        <strong class="stat-num" data-count="128">0</strong><span class="stat-unit">家</span>
         <p>终端体验店遍布皖苏浙<br>迈向全国</p>
       </div>
     </div>
@@ -105,18 +125,18 @@
   <div class="container">
     <div class="section-head reveal">
       <p class="section-eyebrow">BRAND STORY</p>
-      <h2 class="section-title">一杯贡酒，千年顺意</h2>
+      <h2 class="section-title">品牌故事</h2>
       <div class="gold-divider"><i></i><span>❖</span><i></i></div>
     </div>
     <div class="story-lead reveal">
-      <p>东汉建安三年，曹操将家乡亳州所酿"九酝春酒"进献汉献帝，赞为"佳酿"——这是古井贡酒之源，也是事事顺酒的根脉。两千年后，一位名叫王亚洲的亳州青年，以四万元押注"事事顺"商标，依托古井贡酒的优质基酒，把中国人最朴素的心愿——"事事顺"，酿进了一杯浓香里。</p>
+      <p>东汉建安三年，曹操将家乡亳州所酿「九酝春酒」进献汉献帝，赞为「佳酿」——这是古井贡酒之源，也是事事顺酒的根脉。两千年后，一位名叫王亚洲的亳州青年，以四万元押注「事事顺」商标，依托古井贡酒的优质基酒，把中国人最朴素的心愿——「事事顺」，酿进了一杯浓香里。</p>
     </div>
     <div class="timeline">
       <div class="timeline-item reveal">
         <div class="timeline-year">公元196年</div>
         <div class="timeline-body">
           <h3>九酝春酒 · 贡酒之始</h3>
-          <p>曹操献酒汉献帝，"色清如水晶，香纯似幽兰"，亳州酿酒自此名扬天下。</p>
+          <p>曹操献酒汉献帝，「色清如水晶，香纯似幽兰」，亳州酿酒自此名扬天下。</p>
         </div>
       </div>
       <div class="timeline-item reveal">
@@ -129,7 +149,7 @@
       <div class="timeline-item reveal">
         <div class="timeline-year">2019</div>
         <div class="timeline-body">
-          <h3>"金榜题名"定制酒创纪录</h3>
+          <h3>「金榜题名」定制酒创纪录</h3>
           <p>升学宴定制酒上市，单月销量突破百万，场景化定制成为品牌名片。</p>
         </div>
       </div>
@@ -149,42 +169,48 @@
       </div>
     </div>
     <blockquote class="story-quote reveal">
-      <p>"我们卖的不是酒精饮料，而是情感寄托和文化认同。"</p>
+      <p>「我们卖的不是酒精饮料，<br>而是情感寄托和文化认同。」</p>
       <cite>—— 事事顺品牌创始人 王亚洲</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- 吉祥文化 -->
-<section class="culture section section-dark" id="culture">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">CULTURE</p>
-      <h2 class="section-title">中国人的"顺"文化</h2>
-      <div class="gold-divider"><i></i><span>❖</span><i></i></div>
-      <p class="section-sub">事事顺图案，是柿子与如意的结合，寓意事事如意；<br>喜鹊报喜，象征家顺、国顺、事事顺。</p>
+<!-- 吉祥文化 · 图腾 -->
+<section class="culture" id="culture">
+  <div class="culture-grid">
+    <div class="culture-visual">
+      <img src="assets/images/gen/culture-gongbi.jpg" alt="事事顺品牌图腾——柿子、如意与喜鹊工笔插画" class="culture-img reveal">
+      <div class="culture-visual-note reveal" data-delay="200">
+        <p>事事顺图腾</p>
+        <span>柿子 × 如意 × 喜鹊</span>
+      </div>
     </div>
-    <div class="culture-grid">
-      <div class="culture-card reveal">
-        <div class="culture-icon">
-          <svg viewBox="0 0 64 64" fill="none"><path d="M32 8 L36 20 L48 20 L39 28 L42 40 L32 33 L22 40 L25 28 L16 20 L28 20 Z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M20 46 h24 M24 52 h16" stroke="currentColor" stroke-width="2"/></svg>
+    <div class="culture-content">
+      <p class="section-eyebrow reveal">CULTURE</p>
+      <h2 class="culture-title reveal" data-delay="100">中国人的<br>「顺」文化</h2>
+      <p class="culture-desc reveal" data-delay="200">事事顺图案，是柿子与如意的结合，寓意事事如意；<br>喜鹊报喜，象征家顺、国顺、事事顺。<br>我们把这份祝福，分赠给人生的三场大考。</p>
+      <div class="culture-items">
+        <div class="culture-item reveal">
+          <span class="culture-item-num">壹</span>
+          <div>
+            <h3>学业顺</h3>
+            <p>十年寒窗，一朝题名。「金榜题名」升学宴定制酒，单月销量破百万，见证万千学子的圆梦时刻。</p>
+          </div>
         </div>
-        <h3>学业顺</h3>
-        <p>十年寒窗，一朝题名。<br>"金榜题名"升学宴定制酒，单月销量破百万，见证万千学子的圆梦时刻。</p>
-      </div>
-      <div class="culture-card reveal">
-        <div class="culture-icon">
-          <svg viewBox="0 0 64 64" fill="none"><path d="M12 48 L32 14 L52 48 Z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M22 48 L32 30 L42 48" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <div class="culture-item reveal" data-delay="120">
+          <span class="culture-item-num">贰</span>
+          <div>
+            <h3>事业顺</h3>
+            <p>商海纵横，贵人同行。商会宴请、事业庆功，一杯事事顺，敬通往成功路上满怀感恩的人。</p>
+          </div>
         </div>
-        <h3>事业顺</h3>
-        <p>商海纵横，贵人同行。<br>商会宴请、事业庆功，一杯事事顺，敬通往成功路上满怀感恩的人。</p>
-      </div>
-      <div class="culture-card reveal">
-        <div class="culture-icon">
-          <svg viewBox="0 0 64 64" fill="none"><path d="M10 32 L32 12 L54 32" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 32 V52 H48 V32" stroke="currentColor" stroke-width="2" fill="none"/><path d="M28 52 V40 H36 V52" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <div class="culture-item reveal" data-delay="240">
+          <span class="culture-item-num">叁</span>
+          <div>
+            <h3>家业顺</h3>
+            <p>阖家团圆，福寿绵长。婚寿宴席、佳节团圆，「吾家有喜，就喝事事顺」。</p>
+          </div>
         </div>
-        <h3>家业顺</h3>
-        <p>阖家团圆，福寿绵长。<br>婚寿宴席、佳节团圆，"吾家有喜，就喝事事顺"，好日子要有好酒相伴。</p>
       </div>
     </div>
   </div>
@@ -201,9 +227,9 @@
     </div>
     <div class="products-grid">
       <article class="product-card reveal">
-        <div class="product-img">
+        <div class="product-img product-img-red">
           <img src="assets/images/product-liuxing.jpg" alt="事事顺六星 42度500ml 浓香型白酒">
-          <span class="product-tag product-tag-red">中国红</span>
+          <span class="product-tag">中国红</span>
         </div>
         <div class="product-body">
           <h3>事事顺 · 六星</h3>
@@ -211,14 +237,14 @@
           <p class="product-desc">中国红瓶身，玻璃喷涂工艺，代表喜庆与祥和。外盒典雅大方，纯手工制作。婚宴喜宴、佳节礼赠之选。</p>
           <ul class="product-meta">
             <li>高粱 · 大米 · 小麦 · 糯米 · 玉米</li>
-            <li>传统"老五甑"工艺</li>
+            <li>传统「老五甑」工艺</li>
           </ul>
         </div>
       </article>
-      <article class="product-card reveal">
-        <div class="product-img">
+      <article class="product-card reveal" data-delay="120">
+        <div class="product-img product-img-blue">
           <img src="assets/images/product-jiuxing.jpg" alt="事事顺九星 42度500ml 浓香型白酒">
-          <span class="product-tag product-tag-blue">宝石蓝</span>
+          <span class="product-tag">宝石蓝</span>
         </div>
         <div class="product-body">
           <h3>事事顺 · 九星</h3>
@@ -230,15 +256,15 @@
           </ul>
         </div>
       </article>
-      <article class="product-card reveal">
-        <div class="product-img">
+      <article class="product-card reveal" data-delay="240">
+        <div class="product-img product-img-gold">
           <img src="assets/images/product-zhongguohong.jpg" alt="事事顺中国红 42度500ml 浓香型白酒 双瓶装">
-          <span class="product-tag product-tag-gold">电商臻选</span>
+          <span class="product-tag">电商臻选</span>
         </div>
         <div class="product-body">
           <h3>事事顺 · 中国红</h3>
           <p class="product-spec">浓香型 · 42%vol · 500ml</p>
-          <p class="product-desc">红瓶金盖，瓶颈环印"事事顺"，配典雅礼盒。电商渠道臻选款，送礼自饮两相宜。</p>
+          <p class="product-desc">红瓶金盖，瓶颈环印「事事顺」，配典雅礼盒。电商渠道臻选款，送礼自饮两相宜。</p>
           <ul class="product-meta">
             <li>礼盒装 · 双瓶/四盒/整件可选</li>
             <li>价格以官方旗舰店实时为准</li>
@@ -249,39 +275,48 @@
     <div class="custom-banner reveal">
       <div class="custom-banner-text">
         <h3>场景定制服务</h3>
-        <p>"金榜题名"升学宴 · 婚礼喜宴 · 企业庆典 —— 把您的人生喜事，定制进一瓶事事顺。</p>
+        <p>「金榜题名」升学宴 · 婚礼喜宴 · 企业庆典 —— 把您的人生喜事，定制进一瓶事事顺。</p>
       </div>
       <a href="#partner" class="btn btn-gold">咨询定制</a>
     </div>
   </div>
 </section>
 
-<!-- 匠心酿造 -->
-<section class="craft section section-dark" id="craft">
+<!-- 匠心酿造 · 全幅影像 -->
+<section class="craft" id="craft">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head section-head-dark reveal">
       <p class="section-eyebrow">CRAFTSMANSHIP</p>
       <h2 class="section-title">匠心酿造</h2>
       <div class="gold-divider"><i></i><span>❖</span><i></i></div>
       <p class="section-sub">千年古法，五粮精华，一杯浓香的来处</p>
     </div>
-    <div class="craft-grid">
-      <div class="craft-item reveal">
-        <div class="craft-num">壹</div>
+  </div>
+  <div class="craft-panels">
+    <figure class="craft-panel reveal">
+      <div class="craft-panel-imgwrap"><img src="assets/images/gen/craft-grains.jpg" alt="五粮精酿——高粱、大米、小麦、糯米、玉米"></div>
+      <figcaption class="craft-panel-body">
+        <span class="craft-num">壹</span>
         <h3>五粮精酿</h3>
         <p>精选优质高粱、大米、小麦、糯米、玉米，五粮黄金配比，各味谐调，层次丰盈。</p>
-      </div>
-      <div class="craft-item reveal">
-        <div class="craft-num">贰</div>
+      </figcaption>
+    </figure>
+    <figure class="craft-panel reveal" data-delay="120">
+      <div class="craft-panel-imgwrap"><img src="assets/images/gen/craft-cellar.jpg" alt="老五甑古法——百年窖池陶坛陈酿"></div>
+      <figcaption class="craft-panel-body">
+        <span class="craft-num">贰</span>
         <h3>老五甑古法</h3>
-        <p>传承传统"老五甑"酿造工艺，源自古井《九酝酒法》，经国内顶级白酒大师精心调制。</p>
-      </div>
-      <div class="craft-item reveal">
-        <div class="craft-num">叁</div>
+        <p>传承传统「老五甑」酿造工艺，源自古井《九酝酒法》，经国内顶级白酒大师精心调制。</p>
+      </figcaption>
+    </figure>
+    <figure class="craft-panel reveal" data-delay="240">
+      <div class="craft-panel-imgwrap"><img src="assets/images/gen/craft-well.jpg" alt="古井好水——亳州古井优质地下泉水"></div>
+      <figcaption class="craft-panel-body">
+        <span class="craft-num">叁</span>
         <h3>古井好水</h3>
-        <p>汲取亳州古井优质地下泉水，水质甘洌，千年水脉孕育"香纯似幽兰"的浓香风骨。</p>
-      </div>
-    </div>
+        <p>汲取亳州古井优质地下泉水，水质甘洌，千年水脉孕育「香纯似幽兰」的浓香风骨。</p>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -295,26 +330,25 @@
     </div>
     <div class="scenes-grid">
       <figure class="scene-card scene-card-lg reveal">
-        <img src="assets/images/event-wedding.jpg" alt="事事顺宴席现场——吾家有喜 就喝事事顺">
+        <img src="assets/images/gen/scene-wedding.jpg" alt="事事顺婚宴场景——红烛高照的喜宴大厅">
         <figcaption>
           <h3>婚礼宴请</h3>
-          <p>"吾家有喜，就喝事事顺"——幸福时刻，有我相伴，你们一生的幸福我们见证。</p>
+          <p>「吾家有喜，就喝事事顺」——幸福时刻，有我相伴，你们一生的幸福我们见证。</p>
         </figcaption>
       </figure>
-      <figure class="scene-card reveal">
-        <img src="assets/images/event-banquet.jpg" alt="事事顺品鉴宴会现场">
-        <figcaption>
+      <div class="scenes-side">
+        <div class="scene-text-card reveal">
           <h3>佳节礼赠</h3>
-          <p>好礼表心意，酒到情谊到。</p>
-        </figcaption>
-      </figure>
-      <div class="scene-text-card reveal">
-        <h3>商会宴请</h3>
-        <p>通往成功的道路上，总有几个人值得我们满怀感恩。</p>
-      </div>
-      <div class="scene-text-card scene-text-red reveal">
-        <h3>亲友聚会</h3>
-        <p>亲友是我们最重要的财富，欢聚时刻，当然要畅饮。</p>
+          <p>好礼表心意，酒到情谊到。走亲访友，事事顺当然不能少。</p>
+        </div>
+        <div class="scene-text-card scene-text-red reveal" data-delay="120">
+          <h3>商会宴请</h3>
+          <p>通往成功的道路上，总有几个人值得我们满怀感恩。</p>
+        </div>
+        <div class="scene-text-card scene-text-gold reveal" data-delay="240">
+          <h3>亲友聚会</h3>
+          <p>亲友是我们最重要的财富，欢聚时刻，当然要畅饮。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -332,25 +366,25 @@
       <article class="news-card reveal">
         <div class="news-img"><img src="assets/images/event-backdrop.jpg" alt="2021事事顺酒大丰新品发布会背景板——把顺带回家"></div>
         <div class="news-body">
-          <time>2021.04.18</time>
+          <time>2021.04.18 · 盐城</time>
           <h3>事事顺酒新品发布会隆重举行</h3>
-          <p>古井事事顺酒大丰新品品鉴及上市发布会在盐城绿岛生态园举行，三百余位嘉宾共品古井的醇厚与芳香，"把顺带回家"。</p>
+          <p>古井事事顺酒大丰新品品鉴及上市发布会在绿岛生态园举行，三百余位嘉宾共品古井的醇厚与芳香，「把顺带回家」。</p>
         </div>
       </article>
-      <article class="news-card reveal">
+      <article class="news-card reveal" data-delay="120">
         <div class="news-img"><img src="assets/images/event-bottles.jpg" alt="事事顺酒巨型瓶模型亮相发布会"></div>
         <div class="news-body">
-          <time>2021.04.18</time>
+          <time>2021.04.18 · 盐城</time>
           <h3>红蓝双星亮相，经销商齐聚</h3>
           <p>事事顺红瓶、蓝瓶巨型模型惊艳亮相，安徽古井集团与盐城市合顺商贸中心携手，共拓区域市场。</p>
         </div>
       </article>
-      <article class="news-card reveal">
+      <article class="news-card reveal" data-delay="240">
         <div class="news-img"><img src="assets/images/event-speech.jpg" alt="事事顺品牌发布会嘉宾致辞"></div>
         <div class="news-body">
-          <time>媒体报道</time>
-          <h3>"风靡全城"的吉祥酒</h3>
-          <p>据腾讯新闻报道，事事顺在亳州"家喻户晓"——从商贩推车到大小酒楼，"国人谁不期盼事事顺"。</p>
+          <time>媒体报道 · 2025</time>
+          <h3>「风靡全城」的吉祥酒</h3>
+          <p>据腾讯新闻报道，事事顺在亳州「家喻户晓」——从商贩推车到大小酒楼，「国人谁不期盼事事顺」。</p>
         </div>
       </article>
     </div>
@@ -375,7 +409,7 @@
         <div class="channel-item"><strong>电商直播</strong><span>旗舰 · 云约酒</span></div>
         <div class="channel-item"><strong>体验店</strong><span>皖苏浙128家</span></div>
       </div>
-      <div class="partner-card reveal">
+      <div class="partner-card reveal" data-delay="150">
         <h3>安徽省事事顺酒业销售有限公司</h3>
         <ul>
           <li><span>地址</span>安徽省亳州市谯城区药都路1555号 古井房产大厦14楼</li>
@@ -413,7 +447,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>本站为事事顺酒品牌展示网站 · 产品信息以官方渠道为准 · 家顺 · 国顺 · 事事顺</p>
+      <p>本站为事事顺酒品牌展示网站 · 产品信息以官方渠道为准 · 部分视觉素材由AI辅助生成 · 家顺 · 国顺 · 事事顺</p>
     </div>
   </div>
 </footer>
