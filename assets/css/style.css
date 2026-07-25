@@ -17,8 +17,8 @@
   --cream-dark: #F0E7D5;
   --blue: #1E3A5F;
   --white: #FFFFFF;
-  --serif: "STSong", "Songti SC", "SimSun", "宋体", serif;
-  --sans: "PingFang SC", "Microsoft YaHei", "Heiti SC", "黑体", sans-serif;
+  --serif: "Noto Serif SC", "STSong", "SimSun", serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --shadow-lg: 0 30px 70px rgba(23, 16, 12, 0.22);
   --shadow-md: 0 14px 36px rgba(23, 16, 12, 0.12);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -218,10 +218,31 @@ a { color: inherit; text-decoration: none; }
 
 .nav-logo { display: flex; align-items: center; gap: 13px; }
 
-.nav-logo-img {
+.nav-logo-seal-img {
   height: 46px;
   width: auto;
   display: block;
+  flex: none;
+}
+
+.nav-logo-text {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--cream);
+  letter-spacing: 5px;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-logo-text em {
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 8.5px;
+  letter-spacing: 3.5px;
+  color: var(--gold);
+  font-weight: 400;
 }
 
 .nav-menu { display: flex; align-items: center; gap: 36px; }
@@ -1110,11 +1131,26 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 56px;
 }
 
-.footer-logo-img {
-  height: 90px;
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.footer-seal-img {
+  height: 80px;
   width: auto;
   display: block;
-  margin-bottom: 18px;
+  flex: none;
+}
+
+.footer-logo-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--cream);
+  letter-spacing: 4px;
 }
 
 .footer-brand p { font-size: 14px; line-height: 2; }
