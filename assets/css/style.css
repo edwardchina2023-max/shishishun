@@ -220,14 +220,12 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   color: var(--cream);
+  gap: 16px;
 }
 
-/* 官方图形标以独立徽章呈现；细金分隔线把图形与字标锁成一个整体。 */
+/* 官方图形标与字标以留白相连，形成克制、完整的品牌锁定组合。 */
 .nav-logo-mark {
   height: 58px;
-  padding-right: 17px;
-  margin-right: 17px;
-  border-right: 1px solid rgba(201, 164, 92, 0.72);
   display: flex;
   align-items: center;
 }
@@ -243,11 +241,23 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--serif);
   font-size: 31px;
   font-weight: 900;
-  color: var(--cream);
+  color: #E4B85A;
   letter-spacing: 7px;
   line-height: 1;
   white-space: nowrap;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.26);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-logo-text em {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 4px;
+  color: #D4A94C;
 }
 
 .nav-menu { display: flex; align-items: center; gap: 36px; }
