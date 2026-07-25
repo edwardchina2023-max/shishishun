@@ -216,10 +216,24 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
 }
 
-.nav-logo { display: flex; align-items: center; gap: 13px; }
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cream);
+}
+
+/* 官方图形标以独立徽章呈现；细金分隔线把图形与字标锁成一个整体。 */
+.nav-logo-mark {
+  height: 58px;
+  padding-right: 17px;
+  margin-right: 17px;
+  border-right: 1px solid rgba(201, 164, 92, 0.72);
+  display: flex;
+  align-items: center;
+}
 
 .nav-logo-seal-img {
-  height: 46px;
+  height: 58px;
   width: auto;
   display: block;
   flex: none;
@@ -227,22 +241,13 @@ a { color: inherit; text-decoration: none; }
 
 .nav-logo-text {
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 31px;
   font-weight: 900;
   color: var(--cream);
-  letter-spacing: 5px;
-  line-height: 1.15;
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-logo-text em {
-  font-style: normal;
-  font-family: var(--sans);
-  font-size: 8.5px;
-  letter-spacing: 3.5px;
-  color: var(--gold);
-  font-weight: 400;
+  letter-spacing: 7px;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
 }
 
 .nav-menu { display: flex; align-items: center; gap: 36px; }
