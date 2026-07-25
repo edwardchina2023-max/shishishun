@@ -258,6 +258,10 @@ a { color: inherit; text-decoration: none; }
   font-style: normal;
   letter-spacing: 4px;
   color: #D4A94C;
+  width: 100%;
+  display: block;
+  text-align: justify;
+  text-align-last: justify;
 }
 
 .nav-menu { display: flex; align-items: center; gap: 36px; }
