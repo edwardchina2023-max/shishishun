@@ -734,7 +734,7 @@ a { color: inherit; text-decoration: none; }
 
 .products { background: var(--cream); }
 
-.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+.products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; }
 
 .product-card {
   background: var(--white);
@@ -1175,15 +1175,204 @@ a { color: inherit; text-decoration: none; }
   color: rgba(248, 243, 234, 0.45);
 }
 
+/* ---------- 企业精神 ---------- */
+
+.story-motto {
+  margin: 80px auto 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: var(--red-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.story-motto i { color: var(--gold); font-style: normal; font-size: 0.7em; }
+
+/* ---------- 品牌荣誉 ---------- */
+
+.honors {
+  background:
+    radial-gradient(ellipse 60% 70% at 12% 30%, rgba(166, 25, 46, 0.32), transparent 62%),
+    linear-gradient(165deg, var(--red-deep) 0%, #2E060C 100%);
+  color: var(--cream);
+  padding: 120px 0;
+}
+
+.honors-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.honors-visual { position: relative; }
+
+.honors-img {
+  border-radius: 4px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(201, 164, 92, 0.4);
+}
+
+.honors-visual-note {
+  position: absolute;
+  left: -22px;
+  bottom: 44px;
+  background: rgba(23, 16, 12, 0.92);
+  border: 1px solid var(--gold);
+  padding: 20px 26px;
+  box-shadow: var(--shadow-lg);
+}
+
+.honors-visual-note p {
+  font-family: var(--serif);
+  font-size: 19px;
+  letter-spacing: 3px;
+  color: var(--gold-light);
+}
+
+.honors-visual-note span { font-size: 12px; letter-spacing: 2px; color: rgba(248, 243, 234, 0.7); }
+
+.honors-content .section-eyebrow { color: var(--gold); }
+
+.honors-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.2vw, 48px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  margin: 14px 0 20px;
+}
+
+.honors-desc {
+  color: rgba(248, 243, 234, 0.72);
+  font-size: 15.5px;
+  line-height: 2.1;
+  margin-bottom: 40px;
+}
+
+.honors-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 28px; }
+
+.honor-item {
+  display: flex;
+  gap: 18px;
+  padding: 18px 12px;
+  border-top: 1px solid rgba(201, 164, 92, 0.26);
+  transition: background 0.4s, padding 0.4s var(--ease);
+}
+
+.honor-item:hover { background: rgba(201, 164, 92, 0.07); padding-left: 22px; }
+
+.honor-year {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--gold);
+  flex: none;
+  width: 64px;
+  padding-top: 2px;
+  letter-spacing: 1px;
+}
+
+.honor-item h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.honor-item p { font-size: 13px; color: rgba(248, 243, 234, 0.62); line-height: 1.7; }
+
+/* ---------- 匠心 · 大师 ---------- */
+
+.craft-master {
+  background: linear-gradient(180deg, var(--ink) 0%, #201510 100%);
+  padding: 110px 0 120px;
+  color: var(--cream);
+}
+
+.craft-master-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 76px;
+  align-items: center;
+}
+
+.craft-master-visual img {
+  border-radius: 4px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+}
+
+.craft-master-content .section-eyebrow { color: var(--gold); }
+
+.craft-master-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.2vw, 50px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 1.5;
+  margin: 14px 0 20px;
+}
+
+.craft-master-desc {
+  color: rgba(248, 243, 234, 0.72);
+  font-size: 15.5px;
+  line-height: 2.1;
+  margin-bottom: 42px;
+}
+
+.craft-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 20px;
+}
+
+.craft-stat strong {
+  font-family: var(--serif);
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 1px;
+  display: block;
+}
+
+.craft-stat strong em {
+  font-style: normal;
+  font-size: 0.55em;
+  margin-left: 2px;
+  color: var(--gold-light);
+}
+
+.craft-stat span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  letter-spacing: 1.5px;
+  color: rgba(248, 243, 234, 0.6);
+}
+
+/* ---------- 产品图背景补充 ---------- */
+
+.product-img-champagne { background: linear-gradient(170deg, #FBF3DF, #F3E3C2 60%, #E9D1A4); }
+
 /* ---------- 响应式 ---------- */
 
 @media (max-width: 1024px) {
   .intro-stats { grid-template-columns: repeat(2, 1fr); gap: 44px 20px; }
   .stat + .stat::before { display: none; }
   .products-grid, .news-grid { grid-template-columns: repeat(2, 1fr); }
-  .culture-grid { grid-template-columns: 1fr; gap: 60px; }
+  .culture-grid, .honors-grid, .craft-master-grid { grid-template-columns: 1fr; gap: 60px; }
   .culture-visual { max-width: 520px; margin: 0 auto; }
   .culture-visual-note { right: 10px; }
+  .honors-visual { max-width: 480px; margin: 0 auto; }
+  .honors-visual-note { left: 10px; }
   .craft-panels { grid-template-columns: 1fr; }
   .craft-panel { height: 420px; }
   .craft-panel-body p { max-height: 130px; opacity: 1; }
@@ -1220,7 +1409,8 @@ a { color: inherit; text-decoration: none; }
   .hero-title { letter-spacing: 5px; }
   .hero-desc { font-size: 15.5px; }
   .intro { padding: 90px 0 70px; }
-  .products-grid, .news-grid { grid-template-columns: 1fr; }
+  .products-grid, .news-grid, .honors-list { grid-template-columns: 1fr; }
+  .craft-stats { grid-template-columns: repeat(2, 1fr); }
   .scenes-grid { grid-template-columns: 1fr; }
   .scene-card { min-height: 380px; }
   .partner-channels { grid-template-columns: 1fr; }
