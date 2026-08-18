@@ -134,4 +134,58 @@
       heroBg.style.animation = "";
     });
   }
+
+  /* ---------- V2 四大旗舰系列切换 ---------- */
+  var products = {
+    "365": {
+      meaning: "顺一年",
+      name: "事事顺365",
+      copy: "一年三百六十五天，愿日子有序、心里有光。",
+      spec: "浓香型白酒 · 42%vol · 500ml"
+    },
+    "516": {
+      meaning: "我要顺",
+      name: "事事顺516",
+      copy: "把一份直白的好愿望，说给重要的人听。",
+      spec: "浓香型白酒 · 45%vol · 500ml"
+    },
+    "china-red": {
+      meaning: "中国红",
+      name: "事事顺·中国红",
+      copy: "一抹中国红，敬相逢，也敬圆满。",
+      spec: "浓香型白酒 · 42%vol · 500ml"
+    },
+    "family": {
+      meaning: "家和万事顺",
+      name: "事事顺·家顺",
+      copy: "家在，心就有归处；家顺，日子便有暖意。",
+      spec: "浓香型白酒 · 42%vol · 450ml"
+    }
+  };
+
+  var productButtons = document.querySelectorAll(".v2-product-exhibit");
+  var productMeaning = document.getElementById("productMeaning");
+  var productName = document.getElementById("productName");
+  var productCopy = document.getElementById("productCopy");
+  var productSpec = document.getElementById("productSpec");
+
+  if (productButtons.length && productMeaning && productName && productCopy && productSpec) {
+    productButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var product = products[button.getAttribute("data-product")];
+        if (!product) return;
+
+        productButtons.forEach(function (item) {
+          var active = item === button;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        productMeaning.textContent = product.meaning;
+        productName.textContent = product.name;
+        productCopy.textContent = product.copy;
+        productSpec.textContent = product.spec;
+      });
+    });
+  }
 })();
