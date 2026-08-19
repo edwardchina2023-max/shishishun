@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事事顺酒 · 网站 DIY 后台</title>
+<link rel="stylesheet" href="static/admin.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">事事顺酒 · <strong>网站 DIY 后台</strong></div>
+  <div class="topbar-actions">
+    <button id="previewBtn" class="btn ghost">↗ 预览网站</button>
+    <span id="saveHint" class="save-hint"></span>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <nav>
+      <button class="nav-item active" data-panel="blocks">✎ 文字区块</button>
+      <button class="nav-item" data-panel="images">🖼 图片替换</button>
+      <button class="nav-item" data-panel="menu">🧭 导航菜单</button>
+      <button class="nav-item" data-panel="products">🍶 产品文案</button>
+      <button class="nav-item" data-panel="files">📄 文件编辑</button>
+      <button class="nav-item" data-panel="library">🗂 图片库</button>
+      <button class="nav-item" data-panel="deploy">🚀 部署上线</button>
+    </nav>
+    <div class="sidebar-tip">
+      所有修改仅保存在本地文件。<br>
+      改完记得点「部署上线」推送到 GitHub Pages。
+    </div>
+  </aside>
+
+  <main class="content">
+    <!-- 文字区块 -->
+    <section class="panel active" id="panel-blocks">
+      <div class="panel-head">
+        <h2>文字区块</h2>
+        <input id="blockSearch" class="search" placeholder="搜索文字单元…">
+      </div>
+      <p class="panel-desc">这里列出网站上所有可编辑的文字。修改后点「保存」即可生效。</p>
+      <div id="blocksList" class="cards"></div>
+    </section>
+
+    <!-- 图片替换 -->
+    <section class="panel" id="panel-images">
+      <div class="panel-head"><h2>图片替换</h2></div>
+      <p class="panel-desc">上传新图片或选用图片库中的图，替换对应位置。</p>
+      <div id="imagesList" class="cards"></div>
+    </section>
+
+    <!-- 导航菜单 -->
+    <section class="panel" id="panel-menu">
+      <div class="panel-head"><h2>导航菜单</h2></div>
+      <p class="panel-desc">调整顶部导航项，或新增一个指向新栏目的子菜单。</p>
+      <div id="menuList" class="menu-editor"></div>
+      <div class="add-row">
+        <input id="menuLabel" placeholder="菜单文字，如：品牌视频">
+        <input id="menuHref" placeholder="链接，如：#video 或 https://…">
+        <label class="chk"><input type="checkbox" id="menuCta"> 设为按钮样式</label>
+        <button id="addMenuBtn" class="btn">+ 添加菜单项</button>
+      </div>
+      <div class="add-section-box">
+        <h3>新增子菜单并自动建栏目</h3>
+        <input id="secId" placeholder="栏目ID（英文，如：video）">
+        <input id="secTitle" placeholder="栏目标题，如：品牌视频">
+        <button id="addSectionBtn" class="btn gold">+ 建栏目并加菜单</button>
+        <p class="hint">将自动在页面末尾生成新栏目，并把它加入导航。新栏目的标题/正文可在「文字区块」继续编辑。</p>
+      </div>
+      <button id="saveMenuBtn" class="btn gold big">保存导航菜单</button>
+    </section>
+
+    <!-- 产品文案 -->
+    <section class="panel" id="panel-products">
+      <div class="panel-head"><h2>四大旗舰 · 产品文案</h2></div>
+      <p class="panel-desc">修改各酒款的寓意、名称、文案与规格（对应首页切换展示）。</p>
+      <div id="productsList" class="cards"></div>
+      <button id="saveProductsBtn" class="btn gold big">保存产品文案</button>
+    </section>
+
+    <!-- 文件编辑 -->
+    <section class="panel" id="panel-files">
+      <div class="panel-head">
+        <h2>文件编辑</h2>
+        <select id="fileSelect" class="search">
+          <option value="index.html">index.html（整页源码）</option>
+          <option value="assets/css/style.css">assets/css/style.css（样式）</option>
+          <option value="assets/js/main.js">assets/js/main.js（交互）</option>
+        </select>
+      </div>
+      <p class="panel-desc">高级模式：直接编辑网站源文件。此模式可改<strong>任意</strong>文字与图片引用。请谨慎操作，改前建议备份。</p>
+      <textarea id="fileEditor" class="code" spellcheck="false"></textarea>
+      <button id="saveFileBtn" class="btn gold big">保存文件</button>
+    </section>
+
+    <!-- 图片库 -->
+    <section class="panel" id="panel-library">
+      <div class="panel-head">
+        <h2>图片库</h2>
+        <input id="uploadFile" type="file" accept="image/*" hidden>
+        <button id="uploadBtn" class="btn">+ 上传图片</button>
+      </div>
+      <p class="panel-desc">网站内所有图片。点击「复制路径」可在文件编辑或图片替换中粘贴使用。</p>
+      <div id="libraryGrid" class="library"></div>
+    </section>
+
+    <!-- 部署 -->
+    <section class="panel" id="panel-deploy">
+      <div class="panel-head"><h2>部署上线</h2></div>
+      <p class="panel-desc">把本地修改提交并推送到 GitHub，GitHub Pages 会自动重新构建。</p>
+      <div class="status-box">
+        <div class="status-line"><span>Python</span><b id="stPython">—</b></div>
+        <div class="status-line"><span>最近提交</span><b id="stLast">—</b></div>
+        <div class="status-line"><span>工作区状态</span><pre id="stStatus">—</pre></div>
+      </div>
+      <input id="deployMsg" class="search full" placeholder="提交说明，如：更新首页文案与产品图" value="chore: 后台更新网站内容">
+      <button id="deployBtn" class="btn gold big">提交并推送到 GitHub</button>
+      <pre id="deployOut" class="deploy-out"></pre>
+    </section>
+  </main>
+</div>
+
+<script src="static/admin.js"></script>
+</body>
+</html>
