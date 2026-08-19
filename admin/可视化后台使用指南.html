@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事顺可视化后台 · 使用指南</title>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;max-width:780px;margin:40px auto;padding:0 20px;color:#2a2422;line-height:1.75}
+  h1{color:#A6192E} h2{color:#a8843f;border-bottom:2px solid #e7e0d4;padding-bottom:6px;margin-top:30px}
+  .url{background:#2a2422;color:#cfe;padding:12px 16px;border-radius:8px;font-family:monospace;font-size:16px}
+  .step{background:#faf6ee;border:1px solid #e7e0d4;border-radius:10px;padding:14px 18px;margin:12px 0}
+  code{background:#f0e9da;padding:2px 6px;border-radius:5px}
+  table{width:100%;border-collapse:collapse;margin:10px 0}
+  td,th{border:1px solid #e7e0d4;padding:9px 11px;text-align:left;font-size:14px;vertical-align:top}
+  th{background:#faf6ee}
+  .muted{color:#8a7d75;font-size:13px}
+</style>
+</head>
+<body>
+<h1>事事顺酒 · 可视化编辑后台 使用指南</h1>
+<p>这个后台让你<strong>像做 PPT 一样改网站</strong>：在左侧结构树里点一个位置，右侧前台预览会自动高亮这个元素，你直接改文字、换图片 / 视频，保存即生效。</p>
+
+<h2>① 打开后台</h2>
+<div class="url">http://127.0.0.1:8080</div>
+<p>后台已在本机启动，电脑浏览器打开上面的地址即可。（手机访问需用同一台电脑的网络环境。）</p>
+
+<h2>② 三大区域</h2>
+<table>
+<tr><th>区域</th><th>作用</th></tr>
+<tr><td>左侧 · 结构树</td><td>站点 → 13 个区块 → 每个可编辑元素。每项都标了它在前台的<strong>位置</strong>（如「首屏英雄区 / 主标题第二行」），带文字📝 / 图片🖼 / 视频🎬 图标</td></tr>
+<tr><td>中间 · 前台预览</td><td>网站实时预览（同源）。点左侧元素，这里会<strong>自动滚动并红框高亮</strong>对应位置</td></tr>
+<tr><td>右侧 · 编辑面板</td><td>选中元素后显示它的内容：文字给输入框；图片可上传新图或选图片库；视频可上传替换</td></tr>
+</table>
+
+<h2>③ 改文字</h2>
+<div class="step">左侧展开「首屏英雄区」→ 点「主标题第二行（事事顺）」→ 右侧输入框改文字 → 点「保存文字」→ 中间预览自动刷新</div>
+
+<h2>④ 换图片 / 视频（前线协作）</h2>
+<div class="step">点对应图片元素 → 右侧点「⬆ 上传新图」（或「上传新视频」）→ 选本地素材 → 点「保存图片 / 视频」。前线同事拿到素材后，按这个路径直接替换即可。</div>
+
+<h2>⑤ 发布上线</h2>
+<div class="step">改完后，点左侧「🚀 部署上线」→ 填提交说明 → 「提交并推送到 GitHub」。GitHub Pages 会自动重新构建，外网随即更新。</div>
+
+<h2>⑥ 其他能力（顶部导航，兼容老用法）</h2>
+<table>
+<tr><th>面板</th><th>用途</th></tr>
+<tr><td>✎ 文字区块 / 🖼 图片替换</td><td>和以前一样的扁平列表编辑</td></tr>
+<tr><td>🧭 导航菜单</td><td>改顶部菜单、加子菜单</td></tr>
+<tr><td>🍶 产品文案</td><td>四大旗舰酒款寓意 / 名称 / 文案 / 规格</td></tr>
+<tr><td>📄 文件编辑</td><td>高级：直接改源码（英文小标题改这里）</td></tr>
+<tr><td>🗂 图片库</td><td>网站所有图片，可复制路径</td></tr>
+</table>
+
+<p class="muted">提示：固定英文小标题（BRAND STORY 等）在结构树显示 🔒，一般不动；要改请走「文件编辑」面板。</p>
+</body>
+</html>

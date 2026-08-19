@@ -18,7 +18,8 @@
 <div class="layout">
   <aside class="sidebar">
     <nav>
-      <button class="nav-item active" data-panel="blocks">✎ 文字区块</button>
+      <button class="nav-item active" data-panel="visual">🎯 可视化编辑</button>
+      <button class="nav-item" data-panel="blocks">✎ 文字区块</button>
       <button class="nav-item" data-panel="images">🖼 图片替换</button>
       <button class="nav-item" data-panel="menu">🧭 导航菜单</button>
       <button class="nav-item" data-panel="products">🍶 产品文案</button>
@@ -33,8 +34,32 @@
   </aside>
 
   <main class="content">
+    <!-- 可视化编辑（主面板） -->
+    <section class="panel active" id="panel-visual">
+      <div class="visual-layout">
+        <div class="tree-pane">
+          <div class="panel-head">
+            <h2>页面结构 · 改哪里点哪里</h2>
+            <input id="treeSearch" class="search" placeholder="搜索位置…">
+          </div>
+          <p class="panel-desc">站点「事事顺酒」共 1 页、13 个区块。展开区块，点元素即可在右侧编辑；预览区会同步高亮它在前台的位置。</p>
+          <div id="treeView" class="tree"></div>
+        </div>
+        <div class="preview-pane">
+          <div class="preview-bar">
+            <span>前台实时预览（同源）</span>
+            <button id="refreshPreview" class="btn small ghost">↻ 刷新预览</button>
+          </div>
+          <iframe id="previewFrame" src="/site/index.html" title="前台预览"></iframe>
+        </div>
+        <div class="edit-pane" id="editPane">
+          <div class="edit-empty">← 在左侧结构树选择一个元素，这里显示它的内容与编辑框</div>
+        </div>
+      </div>
+    </section>
+
     <!-- 文字区块 -->
-    <section class="panel active" id="panel-blocks">
+    <section class="panel" id="panel-blocks">
       <div class="panel-head">
         <h2>文字区块</h2>
         <input id="blockSearch" class="search" placeholder="搜索文字单元…">

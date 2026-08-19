@@ -75,3 +75,43 @@ body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;backg
 .status-line span{color:var(--muted);width:90px;flex-shrink:0}
 .status-line pre{white-space:pre-wrap;flex:1;font-family:inherit}
 .deploy-out{margin-top:14px;background:#2a2422;color:#cfe;padding:14px;border-radius:10px;font-size:13px;white-space:pre-wrap;min-height:40px}
+
+/* ===== 可视化编辑面板 ===== */
+.visual-layout{display:grid;grid-template-columns:320px 1fr 380px;gap:16px;align-items:start}
+.visual-layout .panel-desc{margin-bottom:12px}
+.tree-pane,.preview-pane,.edit-pane{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.tree-pane{padding:14px;max-height:calc(100vh - 180px);overflow:auto}
+.preview-pane{display:flex;flex-direction:column;height:calc(100vh - 160px)}
+.preview-bar{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);background:#faf6ee}
+#previewFrame{flex:1;width:100%;border:none;background:#fff}
+.edit-pane{padding:16px;max-height:calc(100vh - 160px);overflow:auto}
+.edit-empty{color:var(--muted);text-align:center;padding:40px 10px;font-size:14px}
+.tree-section{border-bottom:1px solid var(--line);padding:4px 0}
+.tree-sec-head{display:flex;align-items:center;gap:8px;padding:8px 6px;cursor:pointer;font-weight:600;font-size:14px;color:var(--ink)}
+.tree-sec-head .tw{color:var(--muted);width:14px}
+.tree-sec-head .si{font-size:16px}
+.tree-sec-head .sn{flex:1}
+.tree-sec-head .sc{font-size:11px;background:#f0e9da;color:var(--muted);padding:1px 8px;border-radius:20px}
+.tree-sec-list{display:none;padding:2px 0 6px}
+.tree-section.open .tree-sec-list{display:block}
+.tree-el{display:flex;align-items:center;gap:8px;padding:7px 8px 7px 24px;border-radius:8px;cursor:pointer;font-size:13px}
+.tree-el:hover{background:#f6efe2}
+.tree-el.sel{background:#fdeceb;border-left:3px solid var(--red)}
+.tree-el .ti{font-size:14px}
+.tree-el .tl{flex:1;color:var(--ink)}
+.tree-el .tv{font-size:11px;color:var(--muted);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tree-el .tv-img{width:34px;height:34px;object-fit:contain;background:#f7f3ea;border:1px solid var(--line);border-radius:6px}
+.tree-el .lock{font-size:11px}
+.tree-empty{color:var(--muted);text-align:center;padding:20px}
+.edit-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.edit-head .ei{font-size:22px}
+.edit-head .eh-key{font-size:16px;font-weight:700;color:var(--red)}
+.edit-head .eh-loc{font-size:11px;color:var(--muted);word-break:break-all}
+.eh-desc{font-size:13px;color:var(--muted);background:#faf6ee;border:1px dashed var(--line);border-radius:10px;padding:10px;margin-bottom:14px}
+.edit-locked{background:#fff7e6;border:1px solid #ffd98a;border-radius:10px;padding:12px;color:#8a6d2a;font-size:13px}
+.edit-textarea,.edit-select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;margin-bottom:12px}
+.edit-textarea{min-height:160px;resize:vertical}
+.edit-imgwrap{text-align:center;margin-bottom:12px;background:#f7f3ea;border:1px solid var(--line);border-radius:10px;padding:10px}
+.edit-imgwrap img,.edit-imgwrap video{max-width:100%;max-height:220px}
+.edit-row{display:flex;gap:8px;margin-bottom:10px}
+.edit-hint{font-size:12px;color:var(--muted);margin-top:8px}

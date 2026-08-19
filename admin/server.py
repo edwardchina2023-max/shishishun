@@ -41,6 +41,18 @@ try:
 except Exception:
     pass
 
+# 可视化编辑结构定义（站点→页面→区块→元素）
+MANIFEST_PATH = os.path.join(ADMIN_DIR, "manifest.json")
+
+
+def load_manifest():
+    try:
+        with open(MANIFEST_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {"site": "未命名站点", "page": "index.html", "sections": []}
+
+
 DEFAULT_PORT = 8080
 
 # 允许在网页里直接编辑的文件（白名单，防止越权写文件）
@@ -182,7 +194,7 @@ def save_block(html, block_id, value):
             return html, 0
         new_html = html[:cb[0]] + value + html[cb[1]:]
         return new_html, 1
-    elif kind == "image":
+    elif kind in ("image", "video"):
         seg = html[ts:te + 1]
         new_seg = re.sub(r'src="[^"]*"', 'src="%s"' % value.replace('"', '\\"'), seg, count=1)
         new_html = html[:ts] + new_seg + html[te + 1:]
@@ -382,6 +394,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.serve_static(path[len("/static/"):], None)
         if path.startswith("/site/"):
             return self.serve_site(path[len("/site/"):])
+        if path == "/api/tree":
+            return self._send_json(load_manifest())
         if path == "/api/blocks":
             return self._send_json(extract_blocks(read_index()))
         if path == "/api/menu":

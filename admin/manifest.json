@@ -1,0 +1,140 @@
+{
+  "site": "事事顺酒",
+  "page": "index.html",
+  "preview": "/site/index.html",
+  "sections": [
+    {
+      "id": "nav",
+      "name": "导航栏",
+      "icon": "🧭",
+      "elements": [
+        {"key": "nav-logo", "type": "image", "label": "导航 Logo", "desc": "页面顶部导航栏左侧的古井贡酒标识"}
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "首屏英雄区",
+      "icon": "🏔",
+      "elements": [
+        {"key": "hero-bg", "type": "image", "label": "首屏背景大图", "desc": "首屏整屏背景（柿子与如意意境图）"},
+        {"key": "hero-eyebrow", "type": "text", "label": "出品方署名", "desc": "首屏顶部小字：安徽古井贡酒股份有限公司·出品"},
+        {"key": "hero-title-1", "type": "text", "label": "主标题第一行", "desc": "首屏主标题上半行"},
+        {"key": "hero-title-2", "type": "text", "label": "主标题第二行（事事顺）", "desc": "首屏主标题下半行，品牌名「事事顺」"},
+        {"key": "hero-desc", "type": "text", "label": "首屏引导文案", "desc": "首屏副文案，解释品牌寓意"}
+      ]
+    },
+    {
+      "id": "intro",
+      "name": "引言区",
+      "icon": "✨",
+      "elements": [
+        {"key": "intro-eyebrow", "type": "text", "label": "引言小标题", "desc": "引言区上方小字副标题"},
+        {"key": "intro-title-1", "type": "text", "label": "引言主标题", "desc": "引言区主标题"}
+      ]
+    },
+    {
+      "id": "story",
+      "name": "品牌故事区",
+      "icon": "📜",
+      "elements": [
+        {"key": "story-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「BRAND STORY」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "story-lead", "type": "text", "label": "品牌故事导语", "desc": "品牌故事正文段落（曹操进献九酝春酒起笔）"}
+      ]
+    },
+    {
+      "id": "honors",
+      "name": "品牌荣誉区",
+      "icon": "🏅",
+      "elements": [
+        {"key": "honors-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「HONORS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "honors-desc", "type": "text", "label": "荣誉描述", "desc": "品牌荣誉区描述文案"},
+        {"key": "honor-medal", "type": "image", "label": "荣誉奖章图", "desc": "品牌荣誉区的金质奖章配图"}
+      ]
+    },
+    {
+      "id": "culture",
+      "name": "吉祥文化区",
+      "icon": "🎋",
+      "elements": [
+        {"key": "culture-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「CULTURE」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "culture-desc", "type": "text", "label": "吉祥文化描述", "desc": "吉祥文化区描述（柿子如意、喜鹊报喜寓意）"},
+        {"key": "culture-img", "type": "image", "label": "吉祥图腾图", "desc": "吉祥文化区工笔插画（柿子、如意、喜鹊）"}
+      ]
+    },
+    {
+      "id": "editorial",
+      "name": "顺文化区",
+      "icon": "🌊",
+      "elements": [
+        {"key": "editorial-h", "type": "text", "label": "区块英文小标（固定）", "desc": "「A WISH IN ONE WORD」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "editorial-p1", "type": "text", "label": "顺文化正文一", "desc": "顺文化区第一段正文"},
+        {"key": "editorial-p2", "type": "text", "label": "顺文化正文二", "desc": "顺文化区第二段正文"},
+        {"key": "editorial-river", "type": "image", "label": "老子临水图", "desc": "顺文化区配图（老子在涡河岸边临水望川）"}
+      ]
+    },
+    {
+      "id": "flagships",
+      "name": "四大旗舰区",
+      "icon": "🍶",
+      "elements": [
+        {"key": "flagships-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「FOUR FLAGSHIPS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "product-365", "type": "image", "label": "产品·事事顺365瓶身", "desc": "四大旗舰第一款酒瓶抠图"},
+        {"key": "product-516", "type": "image", "label": "产品·事事顺516瓶身", "desc": "四大旗舰第二款酒瓶抠图"},
+        {"key": "product-china-red", "type": "image", "label": "产品·中国红酒瓶", "desc": "四大旗舰第三款酒瓶抠图"},
+        {"key": "product-family", "type": "image", "label": "产品·家顺酒瓶", "desc": "四大旗舰第四款酒瓶抠图"}
+      ]
+    },
+    {
+      "id": "craft",
+      "name": "匠心酿造区",
+      "icon": "🔨",
+      "elements": [
+        {"key": "craft-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「CRAFTSMANSHIP」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "craft-sub", "type": "text", "label": "匠心副标题", "desc": "匠心酿造区副标题文案"},
+        {"key": "craft-grains", "type": "image", "label": "五粮图", "desc": "匠心酿造区·五粮精酿配图"},
+        {"key": "craft-cellar", "type": "image", "label": "老窖池图", "desc": "匠心酿造区·百年老窖池配图"},
+        {"key": "craft-well", "type": "image", "label": "无极之水图", "desc": "匠心酿造区·古井泉水配图"},
+        {"key": "craft-master", "type": "image", "label": "老师傅图", "desc": "匠心酿造区·酿造老师傅配图"}
+      ]
+    },
+    {
+      "id": "moments",
+      "name": "顺意时刻区",
+      "icon": "💞",
+      "elements": [
+        {"key": "moments-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「THE MOMENTS THAT MATTER」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "moments-photo", "type": "image", "label": "场景图", "desc": "顺意时刻区主场景图（喜庆宴席）"}
+      ]
+    },
+    {
+      "id": "news",
+      "name": "品牌动态区",
+      "icon": "📰",
+      "elements": [
+        {"key": "news-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「NEWS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "news-1", "type": "image", "label": "动态图一", "desc": "品牌动态区第一张图（发布会背景板）"},
+        {"key": "news-2", "type": "image", "label": "动态图二", "desc": "品牌动态区第二张图（巨型瓶模型）"},
+        {"key": "news-3", "type": "image", "label": "动态图三", "desc": "品牌动态区第三张图（嘉宾致辞）"}
+      ]
+    },
+    {
+      "id": "partner",
+      "name": "招商合作区",
+      "icon": "🤝",
+      "elements": [
+        {"key": "partner-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「PARTNERSHIP」英文小标题，一般不动；要改请走文件编辑", "editable": false},
+        {"key": "partner-sub", "type": "text", "label": "招商副标题", "desc": "招商合作区副标题文案"}
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "页脚区",
+      "icon": "🏁",
+      "elements": [
+        {"key": "footer-logo", "type": "image", "label": "页脚 Logo", "desc": "页脚左侧古井贡酒标识"},
+        {"key": "footer-brand", "type": "text", "label": "页脚品牌语", "desc": "页脚品牌口号文案"},
+        {"key": "footer-bottom", "type": "text", "label": "页脚版权声明", "desc": "页脚最底部版权/声明文字"}
+      ]
+    }
+  ]
+}
