@@ -46,10 +46,9 @@ except Exception:
 # 可视化编辑结构定义（站点→页面→区块→元素）
 MANIFEST_PATH = os.path.join(ADMIN_DIR, "manifest.json")
 
-# ---------- 访问控制（必须） ----------
-# 后台能改写网站并推送 GitHub，绝不可无密码暴露到公网。
-# 优先用环境变量 ADMIN_TOKEN 预设；未设则启动时生成强随机口令并打印到终端。
-ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN") or secrets.token_urlsafe(16)
+# ---------- 访问控制 ----------
+# 本后台仅监听 127.0.0.1（本机回环），不对外暴露，故无需口令，本地直接操作即可。
+ADMIN_TOKEN = None
 
 
 def load_manifest():
@@ -416,16 +415,8 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def _check_auth(self):
-        h = self.headers.get("Authorization", "")
-        if h.startswith("Basic "):
-            try:
-                dec = base64.b64decode(h[6:]).decode("utf-8", "ignore")
-                _u, _, pwd = dec.partition(":")
-                if pwd == ADMIN_TOKEN:
-                    return True
-            except Exception:
-                pass
-        return False
+        # 本地后台仅监听 127.0.0.1，不对外暴露，免口令直接操作
+        return True
 
     def _require_auth(self):
         self.send_response(401)
@@ -607,7 +598,7 @@ def main():
     print(" 后台地址 : http://127.0.0.1:%d" % port)
     print(" 网站预览 : http://127.0.0.1:%d/site/index.html" % port)
     print(" 站点目录 : %s" % ROOT)
-    print(" 访问口令 : %s  （可用环境变量 ADMIN_TOKEN 预设，已强制校验）" % ADMIN_TOKEN)
+    print(" 访问方式 : 本机直连 http://127.0.0.1:%d ，无需口令" % port)
     print(" 关闭方式 : 在终端按 Ctrl+C")
     print("=" * 50)
     try:

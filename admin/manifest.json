@@ -8,20 +8,54 @@
       "name": "导航栏",
       "icon": "🧭",
       "elements": [
-        {"key": "nav-logo", "type": "image", "label": "导航 Logo", "desc": "页面顶部导航栏左侧的古井贡酒标识"}
+        {
+          "key": "nav-logo",
+          "type": "image",
+          "label": "导航·Logo"
+        }
       ]
     },
     {
-      "id": "hero",
+      "id": "top",
       "name": "首屏英雄区",
       "icon": "🏔",
-      "hasBgImage": true,
       "elements": [
-        {"key": "hero-bg", "type": "image", "label": "首屏背景大图", "desc": "首屏整屏背景（柿子与如意意境图）", "isBackground": true},
-        {"key": "hero-eyebrow", "type": "text", "label": "出品方署名", "desc": "首屏顶部小字：安徽古井贡酒股份有限公司·出品"},
-        {"key": "hero-title-1", "type": "text", "label": "主标题第一行", "desc": "首屏主标题上半行"},
-        {"key": "hero-title-2", "type": "text", "label": "主标题第二行（事事顺）", "desc": "首屏主标题下半行，品牌名「事事顺」"},
-        {"key": "hero-desc", "type": "text", "label": "首屏引导文案", "desc": "首屏副文案，解释品牌寓意"}
+        {
+          "key": "hero-bg",
+          "type": "image",
+          "label": "首屏·背景大图",
+          "isBackground": true
+        },
+        {
+          "key": "hero-eyebrow",
+          "type": "text",
+          "label": "首屏·出品方署名"
+        },
+        {
+          "key": "hero-title-1",
+          "type": "text",
+          "label": "首屏·主标题第一行"
+        },
+        {
+          "key": "hero-title-2",
+          "type": "text",
+          "label": "首屏·主标题第二行(事事顺)"
+        },
+        {
+          "key": "hero-desc",
+          "type": "text",
+          "label": "首屏·引导文案"
+        },
+        {
+          "key": "hero-btn-1",
+          "type": "text",
+          "label": "首屏按钮·品鉴产品"
+        },
+        {
+          "key": "hero-btn-2",
+          "type": "text",
+          "label": "首屏按钮·品牌故事"
+        }
       ]
     },
     {
@@ -29,8 +63,36 @@
       "name": "引言区",
       "icon": "✨",
       "elements": [
-        {"key": "intro-eyebrow", "type": "text", "label": "引言小标题", "desc": "引言区上方小字副标题"},
-        {"key": "intro-title-1", "type": "text", "label": "引言主标题", "desc": "引言区主标题"}
+        {
+          "key": "intro-eyebrow",
+          "type": "text",
+          "label": "引言·小标题"
+        },
+        {
+          "key": "intro-title-1",
+          "type": "text",
+          "label": "引言·主标题"
+        },
+        {
+          "key": "stat-1",
+          "type": "text",
+          "label": "引言数据·贡酒之源"
+        },
+        {
+          "key": "stat-2",
+          "type": "text",
+          "label": "引言数据·吉尼斯"
+        },
+        {
+          "key": "stat-3",
+          "type": "text",
+          "label": "引言数据·国家非遗"
+        },
+        {
+          "key": "stat-4",
+          "type": "text",
+          "label": "引言数据·体验店"
+        }
       ]
     },
     {
@@ -38,8 +100,132 @@
       "name": "品牌故事区",
       "icon": "📜",
       "elements": [
-        {"key": "story-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「BRAND STORY」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "story-lead", "type": "text", "label": "品牌故事导语", "desc": "品牌故事正文段落（曹操进献九酝春酒起笔）"}
+        {
+          "key": "story-title",
+          "type": "text",
+          "label": "品牌故事·英文小标",
+          "editable": false
+        },
+        {
+          "key": "story-lead",
+          "type": "text",
+          "label": "品牌故事·导语"
+        },
+        {
+          "key": "tl-1-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-1-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-2-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-2-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-3-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-3-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-4-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-4-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-5-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-5-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-6-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-6-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-7-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-7-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-8-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-8-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-9-title",
+          "type": "text",
+          "label": "品牌故事·时间线条题"
+        },
+        {
+          "key": "tl-9-desc",
+          "type": "text",
+          "label": "品牌故事·时间线正文"
+        },
+        {
+          "key": "tl-10-title",
+          "type": "text",
+          "label": "tl-10-title"
+        },
+        {
+          "key": "tl-10-desc",
+          "type": "text",
+          "label": "tl-10-desc"
+        },
+        {
+          "key": "story-motto",
+          "type": "text",
+          "label": "品牌故事·信条标语"
+        },
+        {
+          "key": "story-quote",
+          "type": "text",
+          "label": "品牌故事·创始人引言"
+        },
+        {
+          "key": "story-quote-cite",
+          "type": "text",
+          "label": "品牌故事·引言署名"
+        }
       ]
     },
     {
@@ -47,9 +233,127 @@
       "name": "品牌荣誉区",
       "icon": "🏅",
       "elements": [
-        {"key": "honors-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「HONORS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "honors-desc", "type": "text", "label": "荣誉描述", "desc": "品牌荣誉区描述文案"},
-        {"key": "honor-medal", "type": "image", "label": "荣誉奖章图", "desc": "品牌荣誉区的金质奖章配图"}
+        {
+          "key": "honor-medal",
+          "type": "image",
+          "label": "品牌荣誉·奖章图"
+        },
+        {
+          "key": "honors-title",
+          "type": "text",
+          "label": "品牌荣誉·英文小标",
+          "editable": false
+        },
+        {
+          "key": "honors-desc",
+          "type": "text",
+          "label": "品牌荣誉·描述"
+        },
+        {
+          "key": "honor-1-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-1-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-1-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-2-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-2-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-2-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-3-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-3-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-3-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-4-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-4-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-4-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-5-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-5-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-5-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-6-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-6-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-6-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        },
+        {
+          "key": "honor-7-year",
+          "type": "text",
+          "label": "品牌荣誉·年份"
+        },
+        {
+          "key": "honor-7-title",
+          "type": "text",
+          "label": "品牌荣誉·称号"
+        },
+        {
+          "key": "honor-7-desc",
+          "type": "text",
+          "label": "品牌荣誉·说明"
+        }
       ]
     },
     {
@@ -57,32 +361,113 @@
       "name": "吉祥文化区",
       "icon": "🎋",
       "elements": [
-        {"key": "culture-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「CULTURE」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "culture-desc", "type": "text", "label": "吉祥文化描述", "desc": "吉祥文化区描述（柿子如意、喜鹊报喜寓意）"},
-        {"key": "culture-img", "type": "image", "label": "吉祥图腾图", "desc": "吉祥文化区工笔插画（柿子、如意、喜鹊）"}
+        {
+          "key": "culture-img",
+          "type": "image",
+          "label": "吉祥文化·图腾图"
+        },
+        {
+          "key": "culture-title",
+          "type": "text",
+          "label": "吉祥文化·英文小标",
+          "editable": false
+        },
+        {
+          "key": "culture-desc",
+          "type": "text",
+          "label": "吉祥文化·描述"
+        },
+        {
+          "key": "cul-1-title",
+          "type": "text",
+          "label": "吉祥文化·条目标题"
+        },
+        {
+          "key": "cul-1-desc",
+          "type": "text",
+          "label": "吉祥文化·条目说明"
+        },
+        {
+          "key": "cul-2-title",
+          "type": "text",
+          "label": "吉祥文化·条目标题"
+        },
+        {
+          "key": "cul-2-desc",
+          "type": "text",
+          "label": "吉祥文化·条目说明"
+        },
+        {
+          "key": "cul-3-title",
+          "type": "text",
+          "label": "吉祥文化·条目标题"
+        },
+        {
+          "key": "cul-3-desc",
+          "type": "text",
+          "label": "吉祥文化·条目说明"
+        }
       ]
     },
     {
-      "id": "editorial",
+      "id": "culture-editorial",
       "name": "顺文化区",
       "icon": "🌊",
       "elements": [
-        {"key": "editorial-h", "type": "text", "label": "区块英文小标（固定）", "desc": "「A WISH IN ONE WORD」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "editorial-p1", "type": "text", "label": "顺文化正文一", "desc": "顺文化区第一段正文"},
-        {"key": "editorial-p2", "type": "text", "label": "顺文化正文二", "desc": "顺文化区第二段正文"},
-        {"key": "editorial-river", "type": "image", "label": "老子临水图", "desc": "顺文化区配图（老子在涡河岸边临水望川）"}
+        {
+          "key": "editorial-h",
+          "type": "text",
+          "label": "顺文化·英文小标",
+          "editable": false
+        },
+        {
+          "key": "editorial-p1",
+          "type": "text",
+          "label": "顺文化·正文一"
+        },
+        {
+          "key": "editorial-p2",
+          "type": "text",
+          "label": "顺文化·正文二"
+        },
+        {
+          "key": "editorial-river",
+          "type": "image",
+          "label": "顺文化·老子临水图"
+        }
       ]
     },
     {
-      "id": "flagships",
+      "id": "products",
       "name": "四大旗舰区",
       "icon": "🍶",
       "elements": [
-        {"key": "flagships-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「FOUR FLAGSHIPS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "product-365", "type": "image", "label": "产品·事事顺365瓶身", "desc": "四大旗舰第一款酒瓶抠图"},
-        {"key": "product-516", "type": "image", "label": "产品·事事顺516瓶身", "desc": "四大旗舰第二款酒瓶抠图"},
-        {"key": "product-china-red", "type": "image", "label": "产品·中国红酒瓶", "desc": "四大旗舰第三款酒瓶抠图"},
-        {"key": "product-family", "type": "image", "label": "产品·家顺酒瓶", "desc": "四大旗舰第四款酒瓶抠图"}
+        {
+          "key": "flagships-title",
+          "type": "text",
+          "label": "四大旗舰·英文小标",
+          "editable": false
+        },
+        {
+          "key": "product-365",
+          "type": "image",
+          "label": "产品·事事顺365瓶身"
+        },
+        {
+          "key": "product-516",
+          "type": "image",
+          "label": "产品·事事顺516瓶身"
+        },
+        {
+          "key": "product-china-red",
+          "type": "image",
+          "label": "产品·中国红瓶身"
+        },
+        {
+          "key": "product-family",
+          "type": "image",
+          "label": "产品·家顺瓶身"
+        }
       ]
     },
     {
@@ -90,21 +475,135 @@
       "name": "匠心酿造区",
       "icon": "🔨",
       "elements": [
-        {"key": "craft-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「CRAFTSMANSHIP」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "craft-sub", "type": "text", "label": "匠心副标题", "desc": "匠心酿造区副标题文案"},
-        {"key": "craft-grains", "type": "image", "label": "五粮图", "desc": "匠心酿造区·五粮精酿配图"},
-        {"key": "craft-cellar", "type": "image", "label": "老窖池图", "desc": "匠心酿造区·百年老窖池配图"},
-        {"key": "craft-well", "type": "image", "label": "无极之水图", "desc": "匠心酿造区·古井泉水配图"},
-        {"key": "craft-master", "type": "image", "label": "老师傅图", "desc": "匠心酿造区·酿造老师傅配图"}
+        {
+          "key": "craft-title",
+          "type": "text",
+          "label": "匠心酿造·英文小标",
+          "editable": false
+        },
+        {
+          "key": "craft-sub",
+          "type": "text",
+          "label": "匠心酿造·副标题"
+        },
+        {
+          "key": "craft-grains",
+          "type": "image",
+          "label": "匠心·五粮图"
+        },
+        {
+          "key": "craftp-1-title",
+          "type": "text",
+          "label": "匠心酿造·图说标题"
+        },
+        {
+          "key": "craftp-1-desc",
+          "type": "text",
+          "label": "匠心酿造·图说说明"
+        },
+        {
+          "key": "craft-cellar",
+          "type": "image",
+          "label": "匠心·老窖池图"
+        },
+        {
+          "key": "craftp-2-title",
+          "type": "text",
+          "label": "匠心酿造·图说标题"
+        },
+        {
+          "key": "craftp-2-desc",
+          "type": "text",
+          "label": "匠心酿造·图说说明"
+        },
+        {
+          "key": "craft-well",
+          "type": "image",
+          "label": "匠心·无极之水图"
+        },
+        {
+          "key": "craftp-3-title",
+          "type": "text",
+          "label": "匠心酿造·图说标题"
+        },
+        {
+          "key": "craftp-3-desc",
+          "type": "text",
+          "label": "匠心酿造·图说说明"
+        },
+        {
+          "key": "craft-master",
+          "type": "image",
+          "label": "craft-master"
+        },
+        {
+          "key": "craft-master-title",
+          "type": "text",
+          "label": "匠心酿造·大师标题"
+        },
+        {
+          "key": "craft-master-desc",
+          "type": "text",
+          "label": "匠心酿造·大师说明"
+        }
       ]
     },
     {
-      "id": "moments",
+      "id": "scenes",
       "name": "顺意时刻区",
       "icon": "💞",
       "elements": [
-        {"key": "moments-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「THE MOMENTS THAT MATTER」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "moments-photo", "type": "image", "label": "场景图", "desc": "顺意时刻区主场景图（喜庆宴席）"}
+        {
+          "key": "moments-photo",
+          "type": "image",
+          "label": "顺意时刻·场景图"
+        },
+        {
+          "key": "moments-title",
+          "type": "text",
+          "label": "英文小标",
+          "editable": false
+        },
+        {
+          "key": "moment-1-title",
+          "type": "text",
+          "label": "顺意时刻·场景标题"
+        },
+        {
+          "key": "moment-1-desc",
+          "type": "text",
+          "label": "顺意时刻·场景说明"
+        },
+        {
+          "key": "moment-2-title",
+          "type": "text",
+          "label": "顺意时刻·场景标题"
+        },
+        {
+          "key": "moment-2-desc",
+          "type": "text",
+          "label": "顺意时刻·场景说明"
+        },
+        {
+          "key": "moment-3-title",
+          "type": "text",
+          "label": "顺意时刻·场景标题"
+        },
+        {
+          "key": "moment-3-desc",
+          "type": "text",
+          "label": "顺意时刻·场景说明"
+        },
+        {
+          "key": "moment-4-title",
+          "type": "text",
+          "label": "顺意时刻·场景标题"
+        },
+        {
+          "key": "moment-4-desc",
+          "type": "text",
+          "label": "顺意时刻·场景说明"
+        }
       ]
     },
     {
@@ -112,10 +611,72 @@
       "name": "品牌动态区",
       "icon": "📰",
       "elements": [
-        {"key": "news-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「NEWS」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "news-1", "type": "image", "label": "动态图一", "desc": "品牌动态区第一张图（发布会背景板）"},
-        {"key": "news-2", "type": "image", "label": "动态图二", "desc": "品牌动态区第二张图（巨型瓶模型）"},
-        {"key": "news-3", "type": "image", "label": "动态图三", "desc": "品牌动态区第三张图（嘉宾致辞）"}
+        {
+          "key": "news-title",
+          "type": "text",
+          "label": "品牌动态·英文小标",
+          "editable": false
+        },
+        {
+          "key": "news-1",
+          "type": "image",
+          "label": "动态·图一"
+        },
+        {
+          "key": "news-1-time",
+          "type": "text",
+          "label": "品牌动态·时间"
+        },
+        {
+          "key": "news-1-title",
+          "type": "text",
+          "label": "品牌动态·标题"
+        },
+        {
+          "key": "news-1-desc",
+          "type": "text",
+          "label": "品牌动态·说明"
+        },
+        {
+          "key": "news-2",
+          "type": "image",
+          "label": "动态·图二"
+        },
+        {
+          "key": "news-2-time",
+          "type": "text",
+          "label": "品牌动态·时间"
+        },
+        {
+          "key": "news-2-title",
+          "type": "text",
+          "label": "品牌动态·标题"
+        },
+        {
+          "key": "news-2-desc",
+          "type": "text",
+          "label": "品牌动态·说明"
+        },
+        {
+          "key": "news-3",
+          "type": "image",
+          "label": "动态·图三"
+        },
+        {
+          "key": "news-3-time",
+          "type": "text",
+          "label": "品牌动态·时间"
+        },
+        {
+          "key": "news-3-title",
+          "type": "text",
+          "label": "品牌动态·标题"
+        },
+        {
+          "key": "news-3-desc",
+          "type": "text",
+          "label": "品牌动态·说明"
+        }
       ]
     },
     {
@@ -123,8 +684,117 @@
       "name": "招商合作区",
       "icon": "🤝",
       "elements": [
-        {"key": "partner-title", "type": "text", "label": "区块英文小标（固定）", "desc": "「PARTNERSHIP」英文小标题，一般不动；要改请走文件编辑", "editable": false},
-        {"key": "partner-sub", "type": "text", "label": "招商副标题", "desc": "招商合作区副标题文案"}
+        {
+          "key": "partner-title",
+          "type": "text",
+          "label": "招商·英文小标",
+          "editable": false
+        },
+        {
+          "key": "partner-sub",
+          "type": "text",
+          "label": "招商·副标题"
+        },
+        {
+          "key": "ch-1-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-1-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "ch-2-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-2-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "ch-3-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-3-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "ch-4-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-4-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "ch-5-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-5-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "ch-6-name",
+          "type": "text",
+          "label": "招商·渠道名称"
+        },
+        {
+          "key": "ch-6-desc",
+          "type": "text",
+          "label": "招商·渠道说明"
+        },
+        {
+          "key": "partner-card-1",
+          "type": "text",
+          "label": "招商·公司名称"
+        },
+        {
+          "key": "partner-info-1",
+          "type": "text",
+          "label": "招商·联系信息"
+        },
+        {
+          "key": "ch-7-desc",
+          "type": "text",
+          "label": "ch-7-desc"
+        },
+        {
+          "key": "partner-info-2",
+          "type": "text",
+          "label": "招商·联系信息"
+        },
+        {
+          "key": "ch-8-desc",
+          "type": "text",
+          "label": "ch-8-desc"
+        },
+        {
+          "key": "partner-info-3",
+          "type": "text",
+          "label": "招商·联系信息"
+        },
+        {
+          "key": "ch-9-desc",
+          "type": "text",
+          "label": "ch-9-desc"
+        },
+        {
+          "key": "partner-note-1",
+          "type": "text",
+          "label": "招商·合作提示"
+        }
       ]
     },
     {
@@ -132,9 +802,46 @@
       "name": "页脚区",
       "icon": "🏁",
       "elements": [
-        {"key": "footer-logo", "type": "image", "label": "页脚 Logo", "desc": "页脚左侧古井贡酒标识"},
-        {"key": "footer-brand", "type": "text", "label": "页脚品牌语", "desc": "页脚品牌口号文案"},
-        {"key": "footer-bottom", "type": "text", "label": "页脚版权声明", "desc": "页脚最底部版权/声明文字"}
+        {
+          "key": "footer-logo",
+          "type": "image",
+          "label": "页脚·Logo"
+        },
+        {
+          "key": "footer-brand",
+          "type": "text",
+          "label": "页脚·品牌语"
+        },
+        {
+          "key": "footer-col-1-title",
+          "type": "text",
+          "label": "页脚·栏目标题"
+        },
+        {
+          "key": "footer-col-2-title",
+          "type": "text",
+          "label": "页脚·栏目标题"
+        },
+        {
+          "key": "footer-body-1",
+          "type": "text",
+          "label": "页脚·栏目正文"
+        },
+        {
+          "key": "footer-col-3-title",
+          "type": "text",
+          "label": "页脚·栏目标题"
+        },
+        {
+          "key": "footer-body-2",
+          "type": "text",
+          "label": "页脚·栏目正文"
+        },
+        {
+          "key": "footer-bottom",
+          "type": "text",
+          "label": "页脚·版权声明"
+        }
       ]
     }
   ]
