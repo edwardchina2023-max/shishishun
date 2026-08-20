@@ -5,9 +5,26 @@
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
   function api(path, method, body) {
-    const opt = { method: method || "GET", headers: { "Content-Type": "application/json" } };
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 30000);
+    const opt = {
+      method: method || "GET",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+    };
     if (body) opt.body = JSON.stringify(body);
-    return fetch(path, opt).then((r) => r.json());
+    return fetch(path, opt)
+      .then((r) => {
+        clearTimeout(timer);
+        if (!r.ok) throw new Error("服务器返回 " + r.status + " " + r.statusText);
+        return r.json();
+      })
+      .catch((e) => {
+        clearTimeout(timer);
+        if (e.name === "AbortError") throw new Error("请求超时，请检查后台是否还在运行。");
+        if (e.message && e.message.includes("Failed to fetch")) throw new Error("无法连接到后台（http://127.0.0.1:8080），请确认服务已启动。");
+        throw e;
+      });
   }
   function hint(msg, ok) {
     const h = $("#saveHint");
@@ -63,18 +80,23 @@
       wrap.className = "tree-section";
       const head = document.createElement("div");
       head.className = "tree-sec-head";
+      let badges = "";
+      if (sec.hasBgImage) badges += '<span class="bg-badge img">🖼背景图</span>';
+      if (sec.hasBgVideo) badges += '<span class="bg-badge vid">🎬背景视频</span>';
       head.innerHTML =
         '<span class="tw">▾</span><span class="si">' + esc(sec.icon || "•") + "</span>" +
-        '<span class="sn">' + esc(sec.name) + '</span><span class="sc">' + secEls.length + "</span>";
+        '<span class="sn">' + esc(sec.name) + "</span>" + badges + '<span class="sc">' + secEls.length + "</span>";
       const list = document.createElement("div");
       list.className = "tree-sec-list";
       secEls.forEach((el) => {
         const id = el.type + ":" + el.key;
         const val = blockValue(id);
         const item = document.createElement("div");
-        item.className = "tree-el" + (current && current.key === el.key && current.type === el.type ? " sel" : "");
+        item.className = "tree-el" + (el.isBackground ? " bg" : "") +
+          (current && current.key === el.key && current.type === el.type ? " sel" : "");
         item.dataset.key = el.key;
         item.dataset.type = el.type;
+        const bgpill = el.isBackground ? '<span class="bg-pill">背景</span>' : "";
         let preview = "";
         if (el.type === "text") {
           preview = '<span class="tv">' + esc((val || "").replace(/<[^>]+>/g, "").slice(0, 40) || "（空）") + "</span>";
@@ -86,7 +108,7 @@
         }
         item.innerHTML =
           '<span class="ti">' + (TYPE_ICON[el.type] || "•") + "</span>" +
-          '<span class="tl">' + esc(el.label) + "</span>" + preview +
+          '<span class="tl">' + esc(el.label) + "</span>" + bgpill + preview +
           (el.editable === false ? '<span class="lock" title="固定内容，一般不动">🔒</span>' : "");
         item.addEventListener("click", () => selectElement(el, sec));
         list.appendChild(item);
@@ -149,6 +171,7 @@
     html += '<div class="edit-head"><span class="ei">' + (TYPE_ICON[el.type] || "•") + "</span>" +
       '<div><div class="eh-key">' + esc(el.label) + "</div>" +
       '<div class="eh-loc">所在区块：' + esc(sec ? sec.name : "—") + " · 标识 " + esc(id) + "</div></div></div>";
+    if (el.isBackground) html += '<div class="bg-pill big">🎯 这是该单元的【背景】素材</div>';
     html += '<div class="eh-desc">' + esc(el.desc || "") + "</div>";
 
     if (el.editable === false) {

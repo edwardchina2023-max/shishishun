@@ -5,9 +5,26 @@
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
   function api(path, method, body) {
-    const opt = { method: method || "GET", headers: { "Content-Type": "application/json" } };
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 30000); // 30 秒超时
+    const opt = {
+      method: method || "GET",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+    };
     if (body) opt.body = JSON.stringify(body);
-    return fetch(path, opt).then((r) => r.json());
+    return fetch(path, opt)
+      .then((r) => {
+        clearTimeout(timer);
+        if (!r.ok) throw new Error("服务器返回 " + r.status + " " + r.statusText);
+        return r.json();
+      })
+      .catch((e) => {
+        clearTimeout(timer);
+        if (e.name === "AbortError") throw new Error("请求超时，请检查后台是否还在运行。");
+        if (e.message && e.message.includes("Failed to fetch")) throw new Error("无法连接到后台（http://127.0.0.1:8080），请确认服务已启动。");
+        throw e;
+      });
   }
   function hint(msg, ok) {
     const h = $("#saveHint");
@@ -294,11 +311,22 @@
     });
   }
   $("#deployBtn").addEventListener("click", () => {
+    const btn = $("#deployBtn");
     const msg = $("#deployMsg").value.trim() || "chore: 后台更新网站内容";
     $("#deployOut").textContent = "正在提交并推送…";
-    api("/api/deploy", "POST", { message: msg }).then((r) => {
-      $("#deployOut").textContent = r.ok ? "✓ 部署成功！\n" + r.output : "✗ 部署失败：\n" + r.output;
-      if (r.ok) loadStatus();
-    });
+    btn.disabled = true;
+    btn.textContent = "推送中…";
+    api("/api/deploy", "POST", { message: msg })
+      .then((r) => {
+        $("#deployOut").textContent = r.ok ? "✓ 部署成功！\n" + r.output : "✗ 部署失败：\n" + r.output;
+        if (r.ok) loadStatus();
+      })
+      .catch((e) => {
+        $("#deployOut").textContent = "✗ 请求失败：\n" + (e.message || e);
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = "提交并推送到 GitHub";
+      });
   });
 })();

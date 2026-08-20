@@ -23,6 +23,8 @@ import os
 import re
 import sys
 import json
+import base64
+import secrets
 import shutil
 import subprocess
 import mimetypes
@@ -43,6 +45,11 @@ except Exception:
 
 # 可视化编辑结构定义（站点→页面→区块→元素）
 MANIFEST_PATH = os.path.join(ADMIN_DIR, "manifest.json")
+
+# ---------- 访问控制（必须） ----------
+# 后台能改写网站并推送 GitHub，绝不可无密码暴露到公网。
+# 优先用环境变量 ADMIN_TOKEN 预设；未设则启动时生成强随机口令并打印到终端。
+ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN") or secrets.token_urlsafe(16)
 
 
 def load_manifest():
@@ -196,10 +203,33 @@ def save_block(html, block_id, value):
         return new_html, 1
     elif kind in ("image", "video"):
         seg = html[ts:te + 1]
-        new_seg = re.sub(r'src="[^"]*"', 'src="%s"' % value.replace('"', '\\"'), seg, count=1)
-        new_html = html[:ts] + new_seg + html[te + 1:]
-        return new_html, 1
+        # 1) 开标签上的 src
+        new_seg = re.sub(r'src="[^"]*"', lambda m: 'src="%s"' % _esc_attr(value), seg, count=1)
+        if new_seg != seg:
+            return html[:ts] + new_seg + html[te + 1:], 1
+        # 2) 内联 style 的 background-image:url(...)
+        new_seg = re.sub(
+            r'(background-image\s*:\s*url\()["\']?[^)"\']*["\']?(\))',
+            lambda m: m.group(1) + _esc_attr(value) + m.group(2), seg, count=1)
+        if new_seg != seg:
+            return html[:ts] + new_seg + html[te + 1:], 1
+        # 3) 元素内部的 <source src="...">（video 的 src 写在子 source 标签）
+        close = html.find("</%s" % kind, te)
+        inner_end = close if close != -1 else te + 1 + 800
+        inner = html[te + 1:inner_end]
+        new_inner = re.sub(
+            r'<source\b[^>]*\bsrc="[^"]*"',
+            lambda m: re.sub(r'src="[^"]*"', 'src="%s"' % _esc_attr(value), m.group(0), count=1),
+            inner, count=1)
+        if new_inner != inner:
+            return html[:te + 1] + new_inner + html[inner_end:], 1
+        return html, 0
     return html, 0
+
+
+def _esc_attr(v):
+    # HTML 属性上下文转义：反斜杠保留，双引号转成 &quot;（而非 \"，后者在 HTML 中并不安全）
+    return str(v).replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 # ---------- 菜单 ----------
@@ -385,7 +415,28 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _check_auth(self):
+        h = self.headers.get("Authorization", "")
+        if h.startswith("Basic "):
+            try:
+                dec = base64.b64decode(h[6:]).decode("utf-8", "ignore")
+                _u, _, pwd = dec.partition(":")
+                if pwd == ADMIN_TOKEN:
+                    return True
+            except Exception:
+                pass
+        return False
+
+    def _require_auth(self):
+        self.send_response(401)
+        self.send_header("WWW-Authenticate", 'Basic realm="Admin"')
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(b"401 Unauthorized - need password")
+
     def do_GET(self):
+        if not self._check_auth():
+            return self._require_auth()
         parsed = urlparse(self.path)
         path = parsed.path
         if path in ("/", "/index.html"):
@@ -422,6 +473,8 @@ class Handler(BaseHTTPRequestHandler):
         return self._send_text("Not Found", 404)
 
     def do_POST(self):
+        if not self._check_auth():
+            return self._require_auth()
         parsed = urlparse(self.path)
         path = parsed.path
         length = int(self.headers.get("Content-Length", 0))
@@ -543,23 +596,18 @@ def main():
             port = int(sys.argv[1])
         except ValueError:
             pass
-    # 端口被占用则自动+1
-    srv = None
-    for try_port in range(port, port + 20):
-        try:
-            srv = ThreadingHTTPServer(("127.0.0.1", try_port), Handler)
-            port = try_port
-            break
-        except OSError:
-            continue
-    if not srv:
-        print("无法绑定端口，请关闭占用 8080 的程序后重试。")
+    # 精确绑定指定端口：被占用则直接报错退出，避免静默漂移到其他端口
+    try:
+        srv = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    except OSError as e:
+        print("无法绑定端口 %d：%s。请先关闭占用该端口的程序后重试。" % (port, e))
         sys.exit(1)
     print("=" * 50)
     print(" 事事顺酒 · 网站 DIY 后台已启动")
     print(" 后台地址 : http://127.0.0.1:%d" % port)
     print(" 网站预览 : http://127.0.0.1:%d/site/index.html" % port)
     print(" 站点目录 : %s" % ROOT)
+    print(" 访问口令 : %s  （可用环境变量 ADMIN_TOKEN 预设，已强制校验）" % ADMIN_TOKEN)
     print(" 关闭方式 : 在终端按 Ctrl+C")
     print("=" * 50)
     try:

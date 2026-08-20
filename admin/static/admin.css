@@ -115,3 +115,12 @@ body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;backg
 .edit-imgwrap img,.edit-imgwrap video{max-width:100%;max-height:220px}
 .edit-row{display:flex;gap:8px;margin-bottom:10px}
 .edit-hint{font-size:12px;color:var(--muted);margin-top:8px}
+
+/* 背景素材标注 */
+.bg-badge{font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;white-space:nowrap;margin-left:3px}
+.bg-badge.img{background:#e8f1ff;color:#1c5fb0;border:1px solid #bcd6f5}
+.bg-badge.vid{background:#fdeaf0;color:#b02a52;border:1px solid #f5bcd0}
+.tree-el.bg{background:#fff7f2;border:1px solid #f3c9b0}
+.tree-el.bg .tl{font-weight:700;color:#a63a17}
+.bg-pill{font-size:9px;font-weight:700;color:#fff;background:#A6192E;padding:1px 6px;border-radius:20px;white-space:nowrap}
+.bg-pill.big{display:inline-block;margin:0 0 10px;font-size:12px;padding:4px 10px}
